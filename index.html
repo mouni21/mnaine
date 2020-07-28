@@ -6,33 +6,86 @@
   <title>Dummy Site</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <link rel = "stylesheet" href="/styles.css">
+  <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> 
+    </script> 
+    <script src= 
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> 
+    </script> 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">
-    <img src="logo.jpg" alt="logo" style="width:40px;"></a>
-    <ul class="navbar-nav">
-      <li class="nav-item ">
-        <a class="nav-link" href="#">Docs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Item2</a>
-      </li>
-    </ul>
-  </nav>
-  <nav class="navbar bg-light">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link 3</a>
-      </li>
-    </ul>
-  </nav>
+   
+       <div class="top_header"></div>
+<div class="container-fluid p-0" id="content"> 
+ <div class="row content">
+  
+   <div class="col-sm-3 side_header">
+   </div>
+
+
+      <div class="col-sm-9">
+        <h2>Main Page Content</h2>
+        <h5></h5>
+        
+        <p>Some Text.....</p>
+        <h3>Some Links</h3>
+        <p>Lomahsdgjadbj</p>
+  
+  </div>
+
+</div>
+</div>
 </body>
+
+  <script type="text/javascript">
+  var ulid = ["side_navbar"]
+var searchval =function() {
+ // e.preventdefault()
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('search');
+  filter = input.value.toUpperCase();
+  // li=[]
+  for(i=0; i<ulid.length; i++){
+    ul = document.getElementById(ulid[i]);
+  li = ul.getElementsByTagName('li');
+  }
+  // console.log(li)
+  // console.log(li.length)
+  // ul = document.getElementById("top_navbar");
+  // li = ul.getElementsByTagName('li');
+console.log(li)
+console.log(li.length)
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 1; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+   
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "block";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+
+
+// document.getElementById('forminline').onsubmit = function(e) {
+//   e.preventDefault();
+//     // window.location = 'http://www.google.com/search?q=site:yourdomainname ' + document.getElementById('search').value;
+//     window.location = 'http://www.google.com/search?q=http://127.0.0.1:5500/index.html? ' + document.getElementById('search').value;
+   
+//     return false;
+// }
+
+</script>
+<script type="text/javascript">
+  $(function(){
+    $('.top_header').load('Navigation/Top_Navbar.html')
+    $('.side_header').load('Navigation/Side-Navbar.html')
+  });
+</script>
 </html>
